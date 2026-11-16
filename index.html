@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MALEAKLAB</title>
+  <link rel="icon" type="image/png" href="asset/logo-unpam.png" />
+  <meta name="description" content="MALEAKLAB adalah brand fashion Indonesia yang menyediakan pakaian kasual streetwear berkualitas tinggi untuk generasi muda." />
+
+  <!-- Google Fonts: Sora, Poppins, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- =========================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo (180 x 44 px) -->
+      <a href="#home" class="brand-logo" data-route="home" aria-label="MALEAKLAB Beranda">
+  <img 
+    src="asset/MALEAKLAB Streetwear Logo.png" 
+    alt="MALEAKLAB Logo" 
+    class="brand-logo-img"
+  >
+</a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li><a href="#product" class="nav-link" data-route="product">PRODUCT</a></li>
+          <li><a href="#about" class="nav-link" data-route="about">ABOUT</a></li>
+          <li><a href="#location" class="nav-link" data-route="location">LOCATION</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions (Cart, Account, Mobile Menu) -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn cart-trigger" id="open-cart-btn" aria-label="Buka Keranjang Belanja">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+
+        <a href="#login" class="icon-btn account-trigger" data-route="login" aria-label="Akun & Login">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
+          </svg>
+        </a>
+
+        <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-Out Navigation Drawer -->
+  <div class="drawer-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menu Mobile" aria-hidden="true">
+    <div class="mobile-drawer-head">
+      <span class="logo-wordmark">MALEAKLAB</span>
+      <button type="button" class="close-btn" id="close-mobile-btn" aria-label="Tutup Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#home" class="mobile-nav-link" data-route="home">HOME</a>
+      <a href="#product" class="mobile-nav-link" data-route="product">PRODUCT</a>
+      <a href="#about" class="mobile-nav-link" data-route="about">ABOUT</a>
+      <a href="#location" class="mobile-nav-link" data-route="location">LOCATION</a>
+      <a href="#login" class="mobile-nav-link" data-route="login">LOGIN / AKUN</a>
+    </nav>
+    <div class="mobile-drawer-cats">
+      <p class="mobile-cat-title">Kategori Produk</p>
+      <button type="button" class="mobile-cat-btn" data-category="Atasan">Atasan</button>
+      <button type="button" class="mobile-cat-btn" data-category="Bawahan">Bawahan</button>
+      <button type="button" class="mobile-cat-btn" data-category="Aksesoris">Aksesoris</button>
+    </div>
+  </aside>
+
+  <!-- =========================================================
+       MAIN CONTENT (DYNAMIC SPA VIEWS)
+       ========================================================= -->
+  <main id="main-content">
+
+    <!-- ==================== VIEW: HOME ==================== -->
+    <section class="page-view is-active" id="view-home" data-view="home">
+      <div class="container">
+        <!-- Hero Carousel (1280 x 440 px) -->
+        <div class="hero-carousel reveal" id="hero-carousel" aria-roledescription="carousel" aria-label="Promo Terbaru MALEAKLAB">
+          <div class="hero-slides" id="hero-slides">
+            <div class="hero-slides" id="hero-slides">
+  <!-- Slide 1 -->
+  <article class="hero-slide is-active">
+    <div class="img-slot hero-img-slot has-image">
+      <img src="asset/banner-panjang.jpg" alt="Hero Banner 1" class="hero-bg-img">
+      <div class="hero-overlay">
+        <h1>NEW ARRIVAL - ANORAK JACKET</h1>
+        <p>Material kuat jadi andalan untuk setiap perjalanan, sejuk tanpa gerah saat aktivitas, dan ringan namun serbaguna</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Slide 2 -->
+  <article class="hero-slide">
+    <div class="img-slot hero-img-slot has-image">
+      <img src="asset/banner-panjang-2.jpg" alt="Hero Banner 2" class="hero-bg-img">
+      <div class="hero-overlay">
+        <h1>NEW ARRIVAL - LONG CARGO REFLECTIVE</h1>
+        <p>Bahan lentur, ditekuk atau diregangkan tetap nyaman, sejuk tanpa gerah saat aktivitas, dan ringan untuk bergerakmakin aktif</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Slide 3 -->
+  <article class="hero-slide">
+    <div class="img-slot hero-img-slot has-image">
+      <img src="asset/banner-panjang-3.jpg" alt="Hero Banner 3" class="hero-bg-img">
+      <div class="hero-overlay">
+        <h1>NEW ARRIVAL - TAS TRAVEL DUFFLE BAG</h1>
+        <p>Tas berdesain ringkas ini dirancang untuk menunjang mobilitas harian serta perjalanan singkat dengan gaya urban yang praktis</p>
+      </div>
+    </div>
+  </article>
+</div>
+          </div>
+          <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Pilih Slide Hero">
+            <button type="button" class="hero-dot is-active" data-slide="0" aria-label="Slide 1"></button>
+            <button type="button" class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button type="button" class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+
+        <!-- 3-Column Feature Cards (410 x 260 px) -->
+        <div class="promo-grid reveal">
+          <!-- Kotak 1: Keunggulan Website -->
+          <article class="promo-card promo-card-dark" data-route="about">
+            <div class="img-slot promo-img-slot has-image">
+              <img src="asset/keunggulan.jpg" alt="Keunggulan Website" class="promo-bg-img">
+              <div class="promo-content promo-content-top">
+                <h3>KENAPA HARUS BELI DI WEBSITE MALEAKLAB?</h3>
+                <ul>
+                  <li>Gratis Ongkir</li>
+                  <li>Jaminan Refund / Return</li>
+                </ul>
+                <div class="promo-mini-badges">
+                  <span class="mini-badge">GRATIS ONGKIR</span>
+                  <span class="mini-badge">PENGEMBALIAN BARANG/DANA</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kotak 2: New Arrival Polo Shirt -->
+          <article class="promo-card" data-product-id="polo-crown-line">
+            <div class="img-slot promo-img-slot has-image">
+              <img src="asset/polo-sirt.jpg" alt="New Arrival Polo Shirt" class="promo-bg-img">
+              <div class="promo-content promo-content-center">
+                <span class="promo-eyebrow">New Arrival</span>
+                <h3>POLO SHIRT</h3>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kotak 3: Maleaklab Store -->
+          <article class="promo-card" data-route="location">
+            <div class="img-slot promo-img-slot has-image">
+              <img src="asset/kantor-kecil.jpg" alt="Foto Store MALEAKLAB" class="promo-bg-img">
+              <div class="promo-content promo-content-center">
+                <h3>MALEAKLAB <small>STORE</small></h3>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      <!-- Brand Intro Watermark Section -->
+<section class="brand-intro-band reveal" aria-labelledby="intro-heading">
+  <div class="watermark-bg" aria-hidden="true">
+    <div class="watermark-track track-left">
+      <span>MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp;</span>
+      <span>MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp;</span>
+    </div>
+    <div class="watermark-track track-right">
+      <span>MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp;</span>
+      <span>MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp; MALEAKLAB &nbsp;</span>
+    </div>
+  </div>
+
+  <div class="container brand-intro-inner">
+    <h2 id="intro-heading">Hai, kami MALEAKLAB</h2>
+    <p>
+      MALEAKLAB adalah brand fashion Indonesia yang menyediakan pakaian kasual berkualitas tinggi dan trendy dengan style fashion yang modern. Fokus pada anak muda dengan gaya hidup urban, <strong>MALEAKLAB</strong> selalu mengikuti tren terkini dan berkomitmen memberdayakan industri fashion serta menciptakan produk yang mendunia.
+    </p>
+  </div>
+</section>
+
+      <!-- Category Buttons + Terbaru Maleaklab -->
+      <div class="container">
+       <div class="category-pills reveal" aria-label="Filter Kategori Produk">
+          <button type="button" class="cat-pill cat-pill-img" data-category="Atasan">
+            <img src="asset/button-atasan.png" alt="Kategori Atasan">
+          </button>
+  
+          <button type="button" class="cat-pill cat-pill-img" data-category="Bawahan">
+            <img src="asset/button-bawahan.png" alt="Kategori Bawahan">
+          </button>
+  
+          <button type="button" class="cat-pill cat-pill-img" data-category="Aksesoris">
+            <img src="asset/button-aksesoris.png" alt="Kategori Aksesoris">
+          </button>
+        </div>
+
+        <section class="latest-section reveal" aria-labelledby="latest-heading">
+          <h2 id="latest-heading" class="section-title-center">TERBARU<br />MALEAKLAB</h2>
+          <div class="latest-grid" id="home-latest-grid">
+            <!-- Diisi otomatis oleh script.js (5 kotak 240 x 310 px) -->
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW: PRODUCT CATALOG ==================== -->
+    <section class="page-view" id="view-product" data-view="product">
+      <div class="container">
+        <!-- Toolbar Filter & Live Search -->
+        <div class="catalog-toolbar reveal">
+          <div class="catalog-status">
+            <h1 class="catalog-heading" id="catalog-heading">Semua Produk</h1>
+            <span class="catalog-count" id="catalog-count">18 Produk</span>
+          </div>
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="product-search-input" placeholder="Cari produk (misal: Cargo, Polo, Dompet)..." aria-label="Cari produk secara real-time" />
+          </div>
+        </div>
+
+        <!-- 3-Column Product Grid (410 x 420 px per card) -->
+        <div class="product-grid" id="product-grid">
+          <!-- Diisi otomatis oleh script.js -->
+        </div>
+
+        <div class="empty-state" id="catalog-empty" hidden>
+          <p>Produk tidak ditemukan. Coba kata kunci atau kategori lain.</p>
+          <button type="button" class="btn-outline" id="reset-filter-btn">Tampilkan Semua Produk</button>
+        </div>
+
+        <!-- Category Buttons Below Grid (sesuai desain Figma) -->
+        <div class="category-pills reveal" aria-label="Filter Kategori Produk">
+          <button type="button" class="cat-pill cat-pill-img" data-category="Atasan">
+            <img src="asset/button-atasan.png" alt="Kategori Atasan">
+          </button>
+  
+          <button type="button" class="cat-pill cat-pill-img" data-category="Bawahan">
+            <img src="asset/button-bawahan.png" alt="Kategori Bawahan">
+          </button>
+  
+          <button type="button" class="cat-pill cat-pill-img" data-category="Aksesoris">
+            <img src="asset/button-aksesoris.png" alt="Kategori Aksesoris">
+          </button>
+          <button type="button" class="cat-pill cat-pill-all is-active" data-category="All">
+            <span>Semua</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW: PRODUCT DETAIL ==================== -->
+    <section class="page-view" id="view-detail" data-view="detail">
+      <div class="container">
+        <button type="button" class="back-link" id="detail-back-btn">&larr; Kembali ke Katalog</button>
+
+        <div class="detail-layout">
+          <!-- Left: Large Product Photo (600 x 620 px) -->
+          <div class="detail-media">
+            <div class="img-slot detail-img-slot" id="detail-img-slot" data-size="600 × 620 px" data-label="Foto Utama Produk"></div>
+          </div>
+
+          <!-- Right: Product Info -->
+          <div class="detail-info">
+            <h1 class="detail-title" id="detail-title">Nama Produk</h1>
+            <p class="detail-price" id="detail-price">Rp 0</p>
+            <p class="detail-desc" id="detail-desc"></p>
+
+            <div class="detail-specs" id="detail-specs"></div>
+
+            <!-- Size Selector for Apparel -->
+            <div class="detail-size-picker" id="detail-size-picker">
+              <label for="detail-size-select">Pilih Ukuran:</label>
+              <div class="size-chips" id="detail-size-chips"></div>
+            </div>
+
+            <div class="detail-policy">
+              <p><strong>*Kebijakan Pengembalian Barang</strong></p>
+              <p>- Jika ingin melakukan retur dan mempercepat prosesnya, sertakan secara detail, untuk proses validasi kelengkapan data :</p>
+              <ol>
+                <li>Menyertakan video unboxing lengkap dengan menampilkan semua sisi paket untuk memastikan bahwa paket tersebut masih baru dan belum pernah dibongkar.</li>
+                <li>Foto nota, dan pricetag/label harga di produk masih ada dan belum pernah dicuci.</li>
+                <li>Kirimkan bukti resi pengembalian tersebut.</li>
+              </ol>
+              <p><strong>*CATATAN PENTING:</strong></p>
+              <ul>
+                <li>Bisa tukar size syarat dan ketentuan berlaku.</li>
+                <li>Pesanan yang sudah masuk dan kami Proses tidak bisa ditukar artikel, ubah size, dibatalkan atau ganti alamat.</li>
+              </ul>
+            </div>
+
+            <!-- Action Cards matching Figma -->
+            <div class="detail-cta-row">
+              <button type="button" class="figma-action-card" id="detail-size-guide-btn">
+                <span class="figma-card-icon" aria-hidden="true">📏</span>
+                <span class="figma-card-text">
+                  <strong>SIZE GUIDE</strong>
+                  <small>&amp; FITTING GUIDE MEASUREMENT INFO</small>
+                </span>
+              </button>
+
+              <button type="button" class="figma-action-card figma-wa-card" id="detail-wa-btn">
+                <span class="wa-circle-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </span>
+                <span class="figma-card-text">
+                  <strong>Pesan Sekarang!</strong>
+                  <small>Via WhatsApp</small>
+                </span>
+              </button>
+
+              <button type="button" class="btn-add-cart" id="detail-add-cart-btn">
+                + Keranjang
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW: ABOUT ==================== -->
+    <section class="page-view" id="view-about" data-view="about">
+      <div class="container">
+        <div class="about-top-grid reveal">
+          <!-- Left Tall Store Photo (610 x 760 px) -->
+          <div class="img-slot about-store-slot has-image">
+        <img class="slot-real-img" src="asset/kantor-gede.jpg" alt="Foto Eksterior MALEAKLAB Store">
+      </div>
+
+          <!-- Right Story Copy -->
+          <div class="about-copy">
+            <h1>BORN TO STAND OUT</h1>
+            <p>
+              MALEAKLAB adalah merek clothing modern yang lahir untuk generasi muda yang berani mengekspresikan diri melalui gaya berpakaian. Dengan desain yang fresh, tegas, dan relevan dengan budaya anak muda, MALEAKLAB menghadirkan pakaian yang bukan hanya nyaman dipakai, tetapi juga menjadi media untuk tampil beda. Setiap koleksi dirancang untuk menggabungkan estetika streetwear kontemporer, kualitas yang terjaga, dan semangat kebebasan berekspresi. Berlandaskan slogan “Born to Stand Out,” MALEAKLAB mengajak setiap orang untuk percaya diri, tidak takut berbeda, dan menjadikan gaya sebagai cermin kepribadian mereka.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Journey Banner (1280 x 380 px) -->
+        <div class="about-journey-banner reveal">
+          <div class="img-slot journey-img-slot has-image">
+            <img src="asset/journey.jpg" alt="MALEAKLAB Journey" class="journey-bg-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW: LOCATION ==================== -->
+<section class="page-view" id="view-location" data-view="location">
+  <div class="container">
+    <div class="location-grid reveal">
+      <!-- Left Map Embed -->
+      <div class="img-slot location-map-slot has-image">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3821352191953!2d106.73326422499125!3d-6.344533293645179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef77956ae9a9%3A0x68c63c11c8d2c0e9!2sUniversitas%20Pamulang!5e0!3m2!1sid!2sid!4v1794837570846!5m2!1sid!2sid" 
+          class="location-map-iframe"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Peta Lokasi MALEAKLAB Pamulang">
+        </iframe>
+      </div>
+
+      <!-- Right Address -->
+      <div class="location-address">
+        <h1>Jl. Suryakencana No.1, Pamulang Bar., Kec. Pamulang, Kota Tangerang Selatan, Banten 15417</h1>
+        <a href="https://maps.google.com/?q=Jl.+Suryakencana+No.1,+Pamulang,+Kota+Tangerang+Selatan" target="_blank" rel="noopener noreferrer" class="btn-outline map-link-btn">
+          Buka di Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ==================== VIEW: LOGIN ==================== -->
+    <section class="page-view" id="view-login" data-view="login">
+      <div class="container">
+        <div class="login-grid reveal">
+          <!-- Left Lookbook Image (600 x 620 px) -->
+          <div class="img-slot login-img-slot has-image">
+        <img class="slot-real-img" src="asset/lookbook-login.jpg" alt="Foto Model Lookbook MALEAKLAB">
+      </div>
+
+          <!-- Right Form -->
+          <div class="login-form-wrap">
+            <h1>Selamat Datang!</h1>
+            <p class="login-subtitle">Yuk, Login untuk Mulai Belanja</p>
+
+            <form id="login-form" class="login-form" novalidate>
+              <div class="form-group">
+                <label for="login-email">Email/ No. Telepon</label>
+                <input type="text" id="login-email" required placeholder="contoh@email.com / 0812..." />
+              </div>
+
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required placeholder="Masukkan password Anda" />
+              </div>
+
+              <div class="form-forgot">
+                <button type="button" class="link-red" id="forgot-password-btn">Lupa password?</button>
+              </div>
+
+              <button type="submit" class="btn-login-submit">MASUK</button>
+
+              <div class="login-divider"><span>ATAU</span></div>
+
+              <button type="button" class="btn-google-login" id="google-login-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#EA4335" d="M12 10.2v3.9h5.5c-.2 1.2-1.5 3.6-5.5 3.6-3.3 0-6-2.7-6-6s2.7-6 6-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.2 14.6 2.2 12 2.2 6.6 2.2 2.2 6.6 2.2 12S6.6 21.8 12 21.8c6.9 0 9.6-4.8 9.6-7.3 0-.5-.1-.9-.1-1.3H12z"/>
+                </svg>
+                <span>Masuk dengan Google</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       SHARED STRIP: BORN TO STAND OUT
+       ========================================================= -->
+  <section class="standout-strip" id="standout-strip" aria-label="Slogan MALEAKLAB">
+    <div class="img-slot standout-img-slot has-image">
+      <img class="slot-real-img" src="asset/banner-slogan.jpg" alt="BORN TO STAND OUT">
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SHARED SECTION: BAGAIMANA CARA MEMESAN
+       ========================================================= -->
+  <section class="how-to-order" id="how-to-order" aria-labelledby="order-guide-heading">
+
+    <!-- Gambar dibuat full horizontal di luar .container -->
+    <div class="order-roadmap-full">
+      <img src="asset/alur-pesan.jpg" alt="Bagaimana Cara Memesan MALEAKLAB via Website" class="order-roadmap-img">
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>MALEAKLAB</h3>
+        <ul>
+          <li><a href="#location" data-route="location">Lokasi Toko</a></li>
+          <li><a href="#about" data-route="about">Tentang Kami</a></li>
+          <li><a href="#product" data-route="product">Produk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>PRODUK</h3>
+        <ul>
+          <li><button type="button" class="footer-cat-link" data-category="Atasan">Atasan</button></li>
+          <li><button type="button" class="footer-cat-link" data-category="Bawahan">Bawahan</button></li>
+          <li><button type="button" class="footer-cat-link" data-category="Aksesoris">Aksesoris</button></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>LAYANAN</h3>
+        <p>Hari dan Jam Kerja</p>
+        <p>09.00 - 17.00</p>
+        <p>(Senin - Jumat)</p>
+      </div>
+
+      <div class="footer-col footer-social-qr">
+  <!-- 1. Logo MALEAKLAB memakai file PNG yang sudah ada -->
+  <div class="footer-brand-logo">
+    <img src="asset/MALEAKLAB Streetwear Logo.png" alt="MALEAKLAB Logo" class="footer-logo-img">
+  </div>
+
+  <div class="social-qr-row">
+    <!-- 2. Ikon SVG IG, FB, TikTok & Link ke https://www.instagram.com/donatgulaya/ -->
+    <div>
+      <h4>Follow Kami</h4>
+      <ul class="social-list">
+        <li>
+          <a href="https://www.instagram.com/donatgulaya/" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </span>
+            @maleaklab.id
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/donatgulaya/" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </span>
+            @maleaklab.id
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/donatgulaya/" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </span>
+            @maleaklab.id
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 3. Gambar Scan QR Code -->
+    <div class="qr-wrap">
+      <h4>Scan Here!</h4>
+      <div class="img-slot qr-img-slot has-image">
+        <img class="slot-real-img" src="asset/qr-wa.png" alt="QR Code MALEAKLAB">
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 MALEAKLAB. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       MODAL: SIZE GUIDE & QUICK VIEW
+       ========================================================= -->
+  <div class="modal-backdrop" id="size-modal" role="dialog" aria-modal="true" aria-labelledby="size-modal-title" hidden>
+    <div class="modal-box modal-size-box">
+      <button type="button" class="modal-close" data-close-modal aria-label="Tutup Size Guide">&times;</button>
+      <div class="size-modal-tabs">
+        <button type="button" class="size-tab-btn is-active" data-size-tab="Atasan">Size Chart Atasan</button>
+        <button type="button" class="size-tab-btn" data-size-tab="Bawahan">Size Chart Bawahan</button>
+      </div>
+
+      <div class="size-modal-grid">
+        <div class="img-slot size-diagram-slot" id="size-diagram-slot" data-size="500 × 500 px" data-label="Ilustrasi Pengukuran Atasan"></div>
+
+        <div class="size-table-wrap">
+          <h2 id="size-modal-title">SIZE CHART</h2>
+          <table class="size-table" id="size-chart-table">
+            <!-- Diisi otomatis oleh script.js -->
+          </table>
+          <p class="size-note">
+            *Kemungkinan akan ada selisih 1-2 cm antara size chart dengan barang yang diterima. Ini biasanya dikarenakan proses pengembangan produksi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickview-modal" role="dialog" aria-modal="true" aria-labelledby="qv-title" hidden>
+    <div class="modal-box modal-qv-box">
+      <button type="button" class="modal-close" data-close-modal aria-label="Tutup Quick View">&times;</button>
+      <div class="qv-grid">
+        <div class="img-slot qv-img-slot" id="qv-img-slot" data-size="410 × 420 px" data-label="Foto Produk"></div>
+        <div class="qv-body">
+          <span class="qv-category" id="qv-category">Kategori</span>
+          <h2 id="qv-title">Nama Produk</h2>
+          <p class="qv-price" id="qv-price">Rp 0</p>
+          <p class="qv-desc" id="qv-desc"></p>
+          <div class="qv-actions">
+            <button type="button" class="btn-primary" id="qv-add-cart-btn">+ Tambah ke Keranjang</button>
+            <button type="button" class="btn-outline" id="qv-full-detail-btn">Lihat Detail Lengkap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SLIDE-OUT CART DRAWER
+       ========================================================= -->
+  <div class="drawer-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Keranjang Belanja" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Keranjang Belanja</h2>
+      <button type="button" class="close-btn" id="close-cart-btn" aria-label="Tutup Keranjang">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <!-- Diisi otomatis oleh script.js -->
+    </div>
+
+    <div class="cart-foot">
+      <div class="cart-total-row">
+        <span>Total Estimasi</span>
+        <strong id="cart-total-price">Rp 0</strong>
+      </div>
+      <button type="button" class="btn-checkout-wa" id="checkout-wa-btn">
+        Pesan via WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast & Back to Top -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Kembali ke Atas">&uarr;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
