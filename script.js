@@ -799,12 +799,12 @@
     });
 
     document.getElementById('google-login-btn').addEventListener('click', () => {
-      showToast('Login Google berhasil (Mode Demo).');
+      showToast('Login Google berhasil (Masih Pengembangan).');
       navigateTo('home');
     });
 
     document.getElementById('forgot-password-btn').addEventListener('click', () => {
-      showToast('Link reset password dikirim ke email Anda (Mode Demo).');
+      showToast('Link reset password dikirim ke email Anda (Masih Pengembangan).');
     });
 
     // ESC Key to Close Modals & Drawers
